@@ -52,3 +52,22 @@ def func_timer( func ):
     print( f"Total time to run {func.__name__} >> {end_time - start_time}" )
     return output
   return wrapper
+
+# # # # # # # # # # # # # # # # # # # # # # # #
+#     Get Object Properties
+# # # # # # # # # # # # # # # # # # # # # # # #
+
+def get_all_props( instance: object ) -> list[ str ]:
+  """
+  Returns a list of all keys / props in given user-defined Class instance. \n
+  This will ignore dunder methods (eg, Python's inbuilt methods)
+  """
+  return [ prop for prop in dir( instance ) if not prop.startswith( "__" ) ]
+
+def get_props( instance: object ) -> list[ str ]:
+  """
+  Returns a list of all keys / props in given user-defined Class instance. \n
+  This will ignore any Class Methods!!
+  This will ignore dunder methods (eg, Python's inbuilt methods)
+  """
+  return [ prop for prop in dir( instance ) if not prop.startswith( "__" ) and not callable( getattr( instance, prop ) ) ]

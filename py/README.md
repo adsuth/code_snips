@@ -4,3 +4,4 @@
 - Verbose Printing
 - Line Stripping (list comprehension)
 - Function Timer (decorator)
+- Get all Object Propertiess
