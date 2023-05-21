@@ -1,3 +1,13 @@
+# # # # # # # # # # # # # # # # # # # # # # # #
+#     Disable Printing
+# # # # # # # # # # # # # # # # # # # # # # # #
+# Alternative to debug logging; simply prevent default printing functionality if required
+LOGGING = False
+
+if not LOGGING:
+  def print( *_ ):
+    ...
+
 
 # # # # # # # # # # # # # # # # # # # # # # # #
 #     Debug Logging
